@@ -24,7 +24,7 @@ public class Startup {
         
         
 
-        System.out.println("The employee's status is: " + employee.getStatus());
+        
     }
     
     

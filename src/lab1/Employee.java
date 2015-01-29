@@ -57,20 +57,21 @@ public class Employee {
         setFirstName(firstName);
         setLastName(firstName);
         setSsn(ssn);
+        currentDate = new Date();
         meetDepartmentStaff();
         meetWithHrForBenefitAndSalryInfo();
         reviewDeptPolicies();
-        currentDate = new Date();
+        System.out.println("The employee's status is: " + getStatus());
     }
 
     // Assume this must be performed first
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalryInfo() {
         System.out.println("Met with Hr on " + formatDateAndReturn());
         metWithHr = true;
     }
 
     // Assume this is must be performed second
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
         if (metWithHr) {
             System.out.println("Met with Dept. Staff on " + formatDateAndReturn());
             metDeptStaff = true;
@@ -81,7 +82,7 @@ public class Employee {
     }
 
     // Assume this must be performed third
-    public void reviewDeptPolicies() {
+    private void reviewDeptPolicies() {
         if (metWithHr && metDeptStaff) {
             System.out.println("Reviewed Dept. Policies on " + formatDateAndReturn());
             reviewedDeptPolicies = true;
@@ -93,7 +94,7 @@ public class Employee {
     }
 
     // Assume this must be performed 4th
-    public void moveIntoCubicle(String cubeId) {
+    private void moveIntoCubicle(String cubeId) {
         if (metWithHr && metDeptStaff && reviewedDeptPolicies) {
             System.out.println("Moved into cube on " + formatDateAndReturn());
             this.cubeId = cubeId;
@@ -107,7 +108,7 @@ public class Employee {
 
     }
 
-    public String getStatus() {
+    private String getStatus() {
         if (metWithHr && metDeptStaff
                 && reviewedDeptPolicies && movedIn) {
             return "Orientation is completed on: " + formatDateAndReturn();
@@ -121,7 +122,7 @@ public class Employee {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
         return fmtDate;
-        
+
     }
 
 }
