@@ -117,9 +117,11 @@ public class Employee {
     }
 
     private String formatDateAndReturn() {
+        //New date format
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
         return fmtDate;
+        
     }
 
 }
