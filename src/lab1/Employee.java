@@ -4,17 +4,47 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * In this lab your challenge is to fix the code in both classes to use
- * proper encapsulation and the other best practices as explained by 
- * your instructor.
+ * In this lab your challenge is to fix the code in both classes to use proper
+ * encapsulation and the other best practices as explained by your instructor.
  *
- * @author      Jim Lombardo, WCTC Instructor
- * @version     1.01
+ * @author Jim Lombardo, WCTC Instructor
+ * @version 1.01
  */
 public class Employee {
-    String firstName;
-    String lastName;
-    public String ssn;
+
+    private String firstName;
+    private String lastName;
+    private String ssn;
+//focus above     
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        //needs validation
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        //needs validation
+        this.lastName = lastName;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        //needs validation
+        this.ssn = ssn;
+    }
+
+//above firstName,lastName,and ssn setters    
     public Date birthDate;
     boolean metWithHr;
     boolean metDeptStaff;
@@ -23,7 +53,13 @@ public class Employee {
     String cubeId;
     Date currentDate;
 
-    public Employee() {
+    public Employee(String firstName, String lastName, String ssn) {
+        setFirstName(firstName);
+        setLastName(firstName);
+        setSsn(ssn);
+        meetDepartmentStaff();
+        meetWithHrForBenefitAndSalryInfo();
+        reviewDeptPolicies();
         currentDate = new Date();
     }
 
@@ -37,7 +73,7 @@ public class Employee {
 
     // Assume this is must be performed second
     public void meetDepartmentStaff() {
-        if(metWithHr) {
+        if (metWithHr) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
             System.out.println("Met with Dept. Staff on " + fmtDate);
@@ -50,7 +86,7 @@ public class Employee {
 
     // Assume this must be performed third
     public void reviewDeptPolicies() {
-        if(metWithHr && metDeptStaff) {
+        if (metWithHr && metDeptStaff) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
             System.out.println("Reviewed Dept. Policies on " + fmtDate);
@@ -64,7 +100,7 @@ public class Employee {
 
     // Assume this must be performed 4th
     public void moveIntoCubicle(String cubeId) {
-        if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
+        if (metWithHr && metDeptStaff && reviewedDeptPolicies) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
             System.out.println("Moved into cube on " + fmtDate);
@@ -83,8 +119,8 @@ public class Employee {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
 
-        if(metWithHr && metDeptStaff
-           && reviewedDeptPolicies && movedIn) {
+        if (metWithHr && metDeptStaff
+                && reviewedDeptPolicies && movedIn) {
             return "Orientation is completed on: " + fmtDate;
         } else {
             return fmtDate + ": Orientation in progress...";
