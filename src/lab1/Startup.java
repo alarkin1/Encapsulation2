@@ -19,7 +19,7 @@ public class Startup {
             may need to create a new class that talks to Employee. This does
             not have to be a GUI class.
         */
-        Employee employee = new Employee("Peter","Piper","333-1234");
+        Employee employee = new Employee("Peter","Piper","333-1234","002");
 
         
         

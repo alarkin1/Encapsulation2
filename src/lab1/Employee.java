@@ -44,6 +44,17 @@ public class Employee {
         this.ssn = ssn;
     }
 
+    public void setCubeId(String cubeId) {
+        this.cubeId = cubeId;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+    
+    
+    
+
 //above firstName,lastName,and ssn setters    
     private Date birthDate;
     private boolean metWithHr;
@@ -53,14 +64,19 @@ public class Employee {
     private String cubeId;
     private Date currentDate;
 
-    public Employee(String firstName, String lastName, String ssn) {
+    public Employee(String firstName, String lastName, String ssn,String cubeId) {
         setFirstName(firstName);
         setLastName(firstName);
         setSsn(ssn);
+        setBirthDate(birthDate);
+        setCubeId(cubeId);
         currentDate = new Date();
-        meetDepartmentStaff();
+        
         meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
         reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
+        
         System.out.println("The employee's status is: " + getStatus());
     }
 
@@ -122,7 +138,5 @@ public class Employee {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
         return fmtDate;
-
     }
-
 }
