@@ -45,13 +45,13 @@ public class Employee {
     }
 
 //above firstName,lastName,and ssn setters    
-    public Date birthDate;
-    boolean metWithHr;
-    boolean metDeptStaff;
-    boolean reviewedDeptPolicies;
-    boolean movedIn;
-    String cubeId;
-    Date currentDate;
+    private Date birthDate;
+    private boolean metWithHr;
+    private boolean metDeptStaff;
+    private boolean reviewedDeptPolicies;
+    private boolean movedIn;
+    private String cubeId;
+    private Date currentDate;
 
     public Employee(String firstName, String lastName, String ssn) {
         setFirstName(firstName);
