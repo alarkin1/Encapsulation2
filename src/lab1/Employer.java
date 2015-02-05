@@ -10,11 +10,12 @@ package lab1;
  * @author ALARKIN1
  */
 public class Employer {
-    private Employee employee = new Employee("Peter","Piper","333-1234","002");
+    private Employee employee;
 
     public void setEmployee(String firstName, String lastName, String ssn,String cubeId) {
-        this.employee = employee;
+        employee = new Employee(firstName,lastName,ssn,cubeId);
     }
+    
     
     
     
