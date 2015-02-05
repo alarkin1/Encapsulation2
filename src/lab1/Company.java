@@ -8,7 +8,7 @@ package lab1;
  * @author      Jim Lombardo, WCTC Instructor
  * @version     1.01
  */
-public class Startup {
+public class Company {
     public static void main(String[] args) {
         /*
             Are we violating SRP (Single Responsibility Principle)?
@@ -19,10 +19,8 @@ public class Startup {
             may need to create a new class that talks to Employee. This does
             not have to be a GUI class.
         */
-        Employee employee = new Employee("Peter","Piper","333-1234","002");
-
-        
-        
+             Employer BillTheEmployer = new Employer();
+             BillTheEmployer.setEmployee("Bob","Smith","000000","112");
 
         
     }

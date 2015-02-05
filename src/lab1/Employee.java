@@ -11,44 +11,28 @@ import java.util.Date;
  * @version 1.01
  */
 public class Employee {
-
-    private String firstName;
-    private String lastName;
-    private String ssn;
 //focus above     
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    private void setFirstName(String firstName) {
         //needs validation
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
+    private void setLastName(String lastName) {
         //needs validation
         this.lastName = lastName;
     }
 
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
+    private void setSsn(String ssn) {
         //needs validation
         this.ssn = ssn;
     }
 
-    public void setCubeId(String cubeId) {
+    private void setCubeId(String cubeId) {
         this.cubeId = cubeId;
     }
 
-    public void setBirthDate(Date birthDate) {
+    private void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
     
@@ -56,6 +40,10 @@ public class Employee {
     
 
 //above firstName,lastName,and ssn setters    
+    
+    private String firstName;
+    private String lastName;
+    private String ssn;
     private Date birthDate;
     private boolean metWithHr;
     private boolean metDeptStaff;
@@ -114,7 +102,7 @@ public class Employee {
         if (metWithHr && metDeptStaff && reviewedDeptPolicies) {
             System.out.println("Moved into cube on " + formatDateAndReturn());
             this.cubeId = cubeId;
-            this.movedIn = true;
+            movedIn = true;
         } else {
             System.out.println("Sorry, you cannot move in to a "
                     + "cubicle until you have first met with HR "
@@ -124,7 +112,7 @@ public class Employee {
 
     }
 
-    private String getStatus() {
+    public String getStatus() {
         if (metWithHr && metDeptStaff
                 && reviewedDeptPolicies && movedIn) {
             return "Orientation is completed on: " + formatDateAndReturn();
